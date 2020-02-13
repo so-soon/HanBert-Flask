@@ -12,7 +12,7 @@ how to install과 기계 독해 맛보기를 참고하세요!
 
 ```
 pip install Flask
-pip install Flask-restful
+pip install Flask_restful
 pip install Flask_ngrok
 ```
 
