@@ -1,4 +1,8 @@
-# HanBert-54kN
+# HanBert-Flask
+
+###
+한국어 BERT(Hanbert)의 Flask 구동 버전입니다.
+
 
 ---
 
