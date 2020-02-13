@@ -10,17 +10,17 @@ how to install과 기계 독해 맛보기를 참고하세요!
 
 1.Flask 설치
 
-'''
+```
 pip install Flask
 pip install Flask-restful
 pip install Flask_ngrok
-'''
+```
 
 2.hanbert_server.py 실행
 
-'''
+```
 $python3 hanbert_server.py --bert_config_file="bert_config.json 경로" --vocab_file="vocab_54k.txt 경로" --init_checkpoint="model.ckpt경로"
-'''
+```
 * init_checkpoint는 fine_tunning되어있는 모델이 필요합니다. 기존의 hanbert에 포함된 ckpt를 사용하시거나 직접 fine_tunning시킨 모델을 포함시켜도 됩니다.
 
 3.http request
