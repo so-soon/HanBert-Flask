@@ -32,7 +32,7 @@ server가 실행되면 ngrok 형식( * Running on http://<random-address>.ngrok.
 (insomnia를 사용하였습니다.)
 
  - 모델 생성 및 parsing 대기상태 진입(model_init)
-   http://<random-address>.ngrok.io/ 주소에 GET방식으로 request를 보냅니다.
+   http://<random-address>.ngrok.io/ 주소에 GET방식으로 request를 보냅니다.(No body)
  
  - context(본문내용) 및 question 전송
    http://<random-address>.ngrok.io/utter_from_user 주소에 POST/JSON 방식으로 request를 보냅니다.
