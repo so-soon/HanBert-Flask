@@ -1,8 +1,45 @@
 # HanBert-Flask
 
 ###
-한국어 BERT(Hanbert)의 Flask 구동 버전입니다.
+한국어 BERT(Hanbert)의 Flask 버전입니다.
 
+test를 위하여 ngrok을 사용하였으며 rest api 형식입니다.
+
+사용 이전에 hanbert의 mrc_test.py를 실행할 수 있는 환경이어야 합니다. 자세한 설치는 https://github.com/tbai2019/HanBert-54k-N 
+how to install과 기계 독해 맛보기를 참고하세요!
+
+1.Flask 설치
+
+'''
+pip install Flask
+pip install Flask-restful
+pip install Flask_ngrok
+'''
+
+2.hanbert_server.py 실행
+
+'''
+$python3 hanbert_server.py --bert_config_file="bert_config.json 경로" --vocab_file="vocab_54k.txt 경로" --init_checkpoint="model.ckpt경로"
+'''
+* init_checkpoint는 fine_tunning되어있는 모델이 필요합니다. 기존의 hanbert에 포함된 ckpt를 사용하시거나 직접 fine_tunning시킨 모델을 포함시켜도 됩니다.
+
+3.http request
+
+server가 실행되면 ngrok 형식( * Running on http://<random-address>.ngrok.io) 의 주소가 나타납니다.
+ 
+해당 주소로 http request 를 보내면 됩니다.
+
+(insomnia를 사용하였습니다.)
+
+ - 모델 생성 및 parsing 대기상태 진입(model_init)
+   http://<random-address>.ngrok.io/ 주소에 GET방식으로 request를 보냅니다.
+ 
+ - context(본문내용) 및 question 전송
+   http://<random-address>.ngrok.io/utter_from_user 주소에 POST/JSON 방식으로 request를 보냅니다.
+   {"context": "본문 내용 ","question":"질문 내용"}
+ 
+ - 결과가 반환됩니다.
+  { "result": "독해결과  : 결과 "}
 
 ---
 
